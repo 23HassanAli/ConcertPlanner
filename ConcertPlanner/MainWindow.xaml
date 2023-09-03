@@ -1,0 +1,46 @@
+﻿<Window x:Class="ConcertPlanner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConcertPlanner"
+        mc:Ignorable="d"
+        Title="Oekest" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="57.872"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Menu DockPanel.Dock="Top"  VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <MenuItem Header="Events">
+                <MenuItem Header="Verwijder alle events" Click="MenuItemAlleEventsVerwijderen_Click"/>
+                <MenuItem Header="Maak standaard event" Click="MenuItemStandaardEvent_Click"/>
+            </MenuItem>
+            <MenuItem Header="Aflsuiten" Click="MenuItemAfsluiten_Click" >
+            </MenuItem>
+        </Menu>
+        <TextBlock Text="Type Event:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" FontSize="20" Margin="60,23,0,0"></TextBlock>
+        <ComboBox Name="ComboBoxTypeEvent" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="200" FontSize="20">
+            <ComboBoxItem Content="festival"/>
+            <ComboBoxItem Content="orkest"/>
+            <ComboBoxItem Content="opera"/>
+        </ComboBox>
+        <TextBlock Text="Naam event: " Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Width="200" Margin="60,17,0,0"  ></TextBlock>
+        <TextBox x:Name="txbNaamEvetn" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20" Width="200"  ></TextBox>
+        <TextBlock Text="Aantal bezoekers" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Width="200" Margin="60,16,0,0"  ></TextBlock>
+        <TextBox x:Name="txbAantalBezoeker" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20" Width="200"  ></TextBox>
+        <Button Content="Voeg event toe" Grid.Row="3" FontSize="20" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Click="BtnVoegToe_Click"/>
+        <Button Content="Verwijders event" Grid.Row="4" FontSize="20" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Click="BtnVerwijder_Click"/>
+
+        <ListBox Name="ListboxEvents" SelectionMode="Extended" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" FontSize="20" Margin="20"></ListBox>
+    </Grid>
+</Window>
